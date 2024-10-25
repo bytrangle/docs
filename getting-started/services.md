@@ -36,7 +36,7 @@ do with hypertables, just with better performance and improved an user experienc
 
 Now that you have an active Timescale account, you create and manage your services in Timescale Console:
 
-1. In the [service creation page][create-service], choose the PostgreSQL service or enable additional `Time-series and analytics` and `AI and Vector` capabilities. Click **Save and continue**.
+1. In the [service creation page][create-service], choose the PostgreSQL service or enable additional `Time-series and analytics` and `AI and Vector` capabilities. Click `Save and continue`.
 
    ![Create Timescale Cloud service](https://assets.timescale.com/docs/images/create-timescale-service.png)
 
@@ -44,7 +44,7 @@ Now that you have an active Timescale account, you create and manage your servic
 
    Your service is constructed immediately and is ready to use.
 
-1. Click **Download the config** and store the configuration information you need to connect to this service in a secure location. 
+1. Click `Download the config` and store the configuration information you need to connect to this service in a secure location. 
 
    This file contains the passwords and configuration information you need to connect to your service using the
    Timescale Console Cloud SQL editors, from the command line, or using third-party database administration tools.
