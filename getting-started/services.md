@@ -17,10 +17,9 @@ Timescale Cloud offers the following PostgreSQL optimized database services:
 
 - **Time-series and Analytics**: a Timescale DB instance optimized for your 
     [time-series and analytics][what-is-time-series] workloads.
-- **Dynamic PostgreSQL**: for all other workloads. A PostgreSQL instance with a 
-    dynamic compute range aligned to your business needs.
-- **Vector and AI**: for apps that require fast search on vector embeddings and metadata, like semantic search, image
-  search, RAG and Agents. Powered by Timescale Vector and available on Time-series and Dynamic PostgreSQL services. 
+- **PostgreSQL**: for all other workloads. A PostgreSQL instance aligned to your business needs.
+- **AI and Vector**: for apps that require fast search on vector embeddings and metadata, like semantic search, image
+  search, RAG and Agents. Powered by Timescale Vector.
 
 <ServiceOverview />
 
