@@ -7,11 +7,18 @@ tags: [storage, data management]
 cloud_ui:
     path:
         - [services, :serviceId, overview]
+plans: [scale, enterprise]  
 ---
 
 # Manage tiering
 
 You use tiered storage to save on storage costs. Specifically, you can migrate rarely used data from Timescale's standard high-performance storage to the object storage. With tiered storage enabled, you then either create automated tiering policies or manually tier and untier data.
+
+<Highlight type="note">
+
+Data tiering is available in [Scale and Enterprise](/about/latest/pricing-and-account-management/) pricing plans only.
+
+</Highlight>
 
 Data on the object storage tier cannot be modified - so inserts, updates, and deletes will not work on tiered data. Make sure that you are not tiering data that is being <b>actively modified</b> to the object storage tier.
 
@@ -21,31 +28,29 @@ You enable tiered storage from the `Overview` tab in Console.
 
 <Procedure>
 
-1.  In Timescale Console, from the `Services` list, click the name of
-    the service you want to modify.
-1.  In the `Overview` tab, locate the `Tiered Storage` card and click
-    `Enable tiered storage`. Confirm the action.
-1.  Tiered storage can take a few seconds to turn on and, once activated, shows the amount of
-    data that has been tiered.   
+1. In [Timescale Console][console], select the service to modify.
 
-    <img class="main-content__illustration"
-    src="https://assets.timescale.com/docs/images/enable-data-tiering-ga.png"
-    width={1375} height={944}
-    alt="The Timescale Console showing tiered storage enabled" />
+    You see the `Overview` section.
+
+1. Scroll down, then click `Enable tiered storage`.
+
+   ![Enable tiered storage](https://assets.timescale.com/docs/images/console-enable-tiered-storage.png)
+
+   When tiered storage is activated, you see the amount of data in the tiered object storage.
 
 </Procedure>
 
 ## Automate tiering with policies
 
-A tiering policy automatically moves data to the object storage tier. Any chunks that only contain data
-older than the `move_after` threshold are moved. This works similarly to a
+A tiering policy automatically moves any data chunks that only contain data
+older than the `move_after` threshold to the object storage tier. This works similarly to a
 [data retention policy][data-retention], but chunks are moved rather than deleted. You can add tiering policies to hypertables, including continuous aggregates.
 
 A tiering policy schedules a job that runs periodically to migrate eligible chunks. The migration is asynchronous. The chunks are considered tiered once they appear in the `timescaledb_osm.tiered_chunks` view. Tiering does not influence your ability to query the chunks.
 
 ### Add a tiering policy
 
-To add a tiering policy, call `add_tiering_policy`:
+To add a tiering policy, connect to your $SERVICE_SHORT and call `add_tiering_policy`:
 
 ```sql
 SELECT add_tiering_policy(hypertable REGCLASS, move_after INTERVAL, if_not_exists BOOL = false);
@@ -79,7 +84,7 @@ If tiering policies do not meet your current needs, you can tier and untier chun
 
 ### Tier chunks
 
-Tiering a chunk is an asynchronous process that schedules the chunk to be tiered. In this example, you use a hypertable called `example` and tier chunks older than three days. You then proceed to list tiered chunks.
+Tiering a chunk is an asynchronous process that schedules the chunk to be tiered. In the following example, you tier chunks older than three days in the example [hypertable][hypertable]. You then list the tiered chunks.
 
 <Procedure>
 
@@ -213,3 +218,5 @@ can drop the associated metadata by calling the `disable_tiering` function.
 </Procedure>
 
 [data-retention]: /use-timescale/:currentVersion:/data-retention/
+[console]: https://console.cloud.timescale.com/
+[hypertable]: /use-timescale/:currentVersion:/hypertables/
