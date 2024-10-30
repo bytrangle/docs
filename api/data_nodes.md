@@ -9,6 +9,8 @@ api:
   type: view
 ---
 
+import MultiNodeDeprecation from "versionContent/_partials/_multi-node-deprecation.mdx";
+
 # timescaledb_information.data_nodes
 
 Get information on data nodes. This function is specific to running
