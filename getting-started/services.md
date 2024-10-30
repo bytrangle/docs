@@ -25,10 +25,10 @@ $CLOUD_LONG offers the following PostgreSQL optimized database services:
 
 To start using $CLOUD_LONG for your data:
 
-1. [Create a $COMPANY account][creatre-an-account]: register in $CONSOLE to get a centralized point to administer and interact with your data.
-1. [Create a $SERVICE_LONG][creatre-a-service]: that is, a PostgreSQL database instance, powered by [$TIMESCALE_DB][timescaledb], built for production, and extended with cloud features like transparent data tiering to object storage.
+1. [Create a $COMPANY account][create-an-account]: register in $CONSOLE to get a centralized point to administer and interact with your data.
+1. [Create a $SERVICE_LONG][create-a-service]: that is, a PostgreSQL database instance, powered by [$TIMESCALE_DB][timescaledb], built for production, and extended with cloud features like transparent data tiering to object storage.
 1. [Connect to your $SERVICE_LONG][connect-to-your-service]: to run queries, add and migrate your data from other sources.
-1. [Create a hypertable][create-a-hypertable]: create a standard PostgreSQL table in your service, the convert it into a [hypertable][hypertables].
+1. [Create a hypertable][create-a-hypertable]: create a standard PostgreSQL table in your service, then convert it into a [hypertable][hypertables].
 
    Anything you can do with regular PostgreSQL tables, you can do with hypertables, just with better performance and improved user experience for time-series data.
 
@@ -76,8 +76,8 @@ And that is it, you are up and running. Enjoy developing with $COMPANY.
 [services-how-to]: /use-timescale/:currentVersion:/services/
 [install-psql]: /use-timescale/:currentVersion:/integrations/query-admin/psql/
 
-[creatre-an-account]: /getting-started/:currentVersion:/services/#create-a-timescale-cloud-account
-[creatre-a-service]: /getting-started/:currentVersion:/services/#create-a-timescale-cloud-service
+[create-an-account]: /getting-started/:currentVersion:/services/#create-a-timescale-cloud-account
+[create-a-service]: /getting-started/:currentVersion:/services/#create-a-timescale-cloud-service
 [connect-to-your-service]: /getting-started/:currentVersion:/services/#connect-to-your-service
 [create-a-hypertable]: /getting-started/:currentVersion:/services/#create-a-hypertable
 [create-service]: https://console.cloud.timescale.com/dashboard/create_services
