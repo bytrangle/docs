@@ -71,7 +71,7 @@ For example, remove the tiering policy from the `example` hypertable in the foll
 SELECT remove_tiering_policy('example');
 ```
 
-If you remove a tiering policy, new scheduled chunks will not be tiered. However, already tiered chunks won't be untiered. You can [untier chunks manually](#manually-tier-and-untier-chunks) to the local storage.
+If you remove a tiering policy, new scheduled chunks are not be tiered. However, chunks in tiered storage are not untiered. You [untier chunks manually](#manually-tier-and-untier-chunks) to local storage.
 
 ## Manually tier and untier chunks
 
