@@ -11,7 +11,7 @@ cloud_ui:
 
 # Manage tiering
 
-You use tiered storage to save on storage costs. Specifically, you can migrate rarely used data from Timescale's standard high-performance storage to the object storage. With tiered storage enabled, you then either create automated tiering policies or manually tier and untier data.
+You use tiered storage to save on storage costs. Specifically, you can migrate rarely used data from Timescale's standard high-performance storage to the object storage. After you enable tiered storage, you then either create automated tiering policies or manually tier and untier data.
 
 Data on the object storage tier cannot be modified - so inserts, updates, and deletes will not work on tiered data. Make sure that you are not tiering data that is being <b>actively modified</b> to the object storage tier.
 
