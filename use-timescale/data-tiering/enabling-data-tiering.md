@@ -41,7 +41,7 @@ A tiering policy automatically moves data to the object storage tier. Any chunks
 older than the `move_after` threshold are moved. This works similarly to a
 [data retention policy][data-retention], but chunks are moved rather than deleted. You can add tiering policies to hypertables, including continuous aggregates.
 
-A tiering policy schedules a job that runs periodically to migrate eligible chunks. The migration is asynchronous. The chunks are considered tiered once they appear in the `timescaledb_osm.tiered_chunks` view. Tiering does not influence your ability to query the chunks.
+A tiering policy schedules a job that runs periodically to asynchronously migrate eligible chunks to object storage. Chunks are considered tiered once they appear in the `timescaledb_osm.tiered_chunks` view. Tiering does not influence your ability to query the chunks.
 
 ### Add a tiering policy
 
