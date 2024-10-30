@@ -4,6 +4,7 @@ excerpt: How tiered data works on replicas and forks
 product: [cloud]
 keywords: [tiered storage]
 tags: [storage, data management]
+plans: [scale, enterprise]  
 ---
 
 # How tiered data works on replicas and forks 

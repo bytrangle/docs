@@ -4,6 +4,7 @@ excerpt: A quick tour of tiered storage
 product: [cloud]
 keywords: [tiered storage]
 tags: [storage, data management]
+plans: [scale, enterprise]  
 ---
 
 # Tiered Storage

@@ -7,6 +7,7 @@ tags: [storage, data management]
 cloud_ui:
     path:
         - [services, :serviceId, overview]
+plans: [scale, enterprise]  
 ---
 
 # About the object storage tier

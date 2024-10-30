@@ -5,6 +5,7 @@ products: [cloud]
 topics: [data tiering]
 keywords: [tiered storage]
 tags: [tiered storage]
+plans: [scale, enterprise]  
 ---
 
 
