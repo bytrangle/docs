@@ -55,7 +55,7 @@ Now that you have an active $COMPANY account, you create and manage your service
 
 1. Follow the service creation wizard.   
 
-If you choose to go directly to the service overview, [Check your service and connect to it][connect-to-your-service] 
+If you choose to go directly to the service overview, [Connect to your service][connect-to-your-service] 
 shows you how to connect.
 
 </Procedure> 
@@ -85,3 +85,4 @@ And that is it, you are up and running. Enjoy developing with $COMPANY.
 [what-is-dynamic-postgres]: https://www.timescale.com/dynamic-postgresql
 [hypertables]: /use-timescale/:currentVersion:/hypertables/about-hypertables/#hypertable-partitioning
 [timescaledb]: https://docs.timescale.com/#TimescaleDB
+
