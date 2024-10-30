@@ -9,12 +9,11 @@ plans: [scale, enterprise]
 
 # Tiered storage
 
-Tiered storage is Timescale's [hierarchical storage management architecture](https://en.wikipedia.org/wiki/Hierarchical_storage_management). 
-Engineered for infinite low-cost scalability, tiered storage is available for the 
-[Time series and analytics](https://www.timescale.com/products) instances you create in 
-[Timescale](https://console.cloud.timescale.com/).
+Tiered storage is a [hierarchical storage management architecture](https://en.wikipedia.org/wiki/Hierarchical_storage_management) for 
+[Time series and analytics][create-service] services you create in [$CLOUD_LONG](https://console.cloud.timescale.com/).
 
-Tiered storage consists of the:
+Engineered for infinite low-cost scalability, tiered storage consists of the:
+
 * **High-performance tier**: rapid access to the most recent, and frequently accessed data.
 
 * **Object storage tier**: store data that is rarely accessed and has lower performance requirements.
@@ -43,30 +42,33 @@ solutions to offload data to secondary storage and fetch it back in when needed.
 we do the work for you. 
 
 <Highlight type="info">
+
 Tiered storage is only available for the [Time series and analytics](https://www.timescale.com/products)
-instances you create in [Timescale](https://console.cloud.timescale.com/). 
+instances you create in [$CLOUD_LONG](https://console.cloud.timescale.com/). 
+
 Tiered storage **DOES NOT** work on Self-hosted TimescaleDB or Managed Service for TimescaleDB.  
 </Highlight>
 
 <!-- vale Google.SmartQuotes = YES -->
 
-In this section you can:
-* [Learn about the object storage tier][about-data-tiering] before you start using tiered storage.
-* Take a [tour of tiered storage features][tour-data-tiering].
-* [Learn how to enable the object storage tier][enabling-data-tiering] on your service.
-* Manually [tier chunks][manual-tier-chunk] to schedule individual chunks to be tiered.
-* Create a [Tiering Policy][creating-data-tiering-policy] to automatically schedule chunks to be tiered.
-* [Learn how to query tiered data][querying-tiered-data].
-* Manually [untier chunks][untier-data] to move data back to the high-performance local storage tier.
-* [Disable tiering on a hypertable][disabling-data-tiering] on an individual table if you no longer want to associate it with tiered storage.
+This section explains the following:
+* [Learn about the object storage tier][about-data-tiering]: understand tiered storage before you 
+  [Manage tiering][enabling-data-tiering].
+* [Tour tiered storage][tour-data-tiering]: see the different features in tiered storage. 
+* [Manage tiering][enabling-data-tiering]: enable and disable data tiering, automate tiering with 
+   policies or tier and untier manually.
+* [Query tiered data][querying-tiered-data]: query and performance for tiered data.
+* [Replicas and forks with tiered data][replicas-and-forks]: billing and tiered storage. 
 
 
 [about-data-tiering]: /use-timescale/:currentVersion:/data-tiering/about-data-tiering/
 [tour-data-tiering]: /use-timescale/:currentVersion:/data-tiering/tour-data-tiering/
 [enabling-data-tiering]: /use-timescale/:currentVersion:/data-tiering/enabling-data-tiering/
+[replicas-and-forks]: /use-timescale/:currentVersion:/data-tiering/tiered-data-replicas-forks/
 [manual-tier-chunk]: /use-timescale/:currentVersion:/data-tiering/manual-tier-chunk/
 [disabling-data-tiering]: /use-timescale/:currentVersion:/data-tiering/disabling-data-tiering/
-[creating-data-tiering-policy]: /use-timescale/:currentVersion:/data-tiering/creating-data-tiering-policy/
+[creating-data-tiering-policy]: /use-timescale/:currentVersion:/data-tiering/enabling-data-tiering/#automate-tiering-with-policies
 [querying-tiered-data]: /use-timescale/:currentVersion:/data-tiering/querying-tiered-data/
 [untier-data]: /use-timescale/:currentVersion:/data-tiering/untier-data/
 [add-retention-policies]: /api/:currentVersion:/continuous-aggregates/add_policies/
+[create-service]: /getting-started/:currentVersion:/services/
