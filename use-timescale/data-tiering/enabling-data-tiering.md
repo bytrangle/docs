@@ -12,7 +12,7 @@ plans: [scale, enterprise]
 
 # Manage tiering
 
-You use tiered storage to save on storage costs. Specifically, you can migrate rarely used data from Timescale's standard high-performance storage to the object storage. With tiered storage enabled, you then either create automated tiering policies or manually tier and untier data.
+You use tiered storage to save on storage costs. Specifically, you can migrate rarely used data from Timescale's standard high-performance storage to the object storage. After you enable tiered storage, you then either create automated tiering policies or manually tier and untier data.
 
 <Highlight type="note">
 
@@ -46,7 +46,7 @@ A tiering policy automatically moves any data chunks that only contain data
 older than the `move_after` threshold to the object storage tier. This works similarly to a
 [data retention policy][data-retention], but chunks are moved rather than deleted. You can add tiering policies to hypertables, including continuous aggregates.
 
-A tiering policy schedules a job that runs periodically to migrate eligible chunks. The migration is asynchronous. The chunks are considered tiered once they appear in the `timescaledb_osm.tiered_chunks` view. Tiering does not influence your ability to query the chunks.
+A tiering policy schedules a job that runs periodically to asynchronously migrate eligible chunks to object storage. Chunks are considered tiered once they appear in the `timescaledb_osm.tiered_chunks` view. Tiering does not influence your ability to query the chunks.
 
 ### Add a tiering policy
 
@@ -76,7 +76,7 @@ For example, remove the tiering policy from the `example` hypertable in the foll
 SELECT remove_tiering_policy('example');
 ```
 
-If you remove a tiering policy, new scheduled chunks will not be tiered. However, already tiered chunks won't be untiered. You can [untier chunks manually](#manually-tier-and-untier-chunks) to the local storage.
+If you remove a tiering policy, new scheduled chunks are not be tiered. However, chunks in tiered storage are not untiered. You [untier chunks manually](#manually-tier-and-untier-chunks) to local storage.
 
 ## Manually tier and untier chunks
 
