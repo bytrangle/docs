@@ -52,13 +52,13 @@ Tiered storage **DOES NOT** work on Self-hosted TimescaleDB or Managed Service f
 <!-- vale Google.SmartQuotes = YES -->
 
 This section explains the following:
-* [Learn about the object storage tier][about-data-tiering]: understand tiered storage before you 
-  [Manage tiering][enabling-data-tiering].
+* [Learn about the object storage tier][about-data-tiering]: understand tiered storage.
 * [Tour tiered storage][tour-data-tiering]: see the different features in tiered storage. 
 * [Manage tiering][enabling-data-tiering]: enable and disable data tiering, automate tiering with 
    policies or tier and untier manually.
 * [Query tiered data][querying-tiered-data]: query and performance for tiered data.
-* [Replicas and forks with tiered data][replicas-and-forks]: billing and tiered storage. 
+* [Replicas and forks with tiered data][replicas-and-forks]: how tiered storage works
+  with forks and replicas. 
 
 
 [about-data-tiering]: /use-timescale/:currentVersion:/data-tiering/about-data-tiering/
