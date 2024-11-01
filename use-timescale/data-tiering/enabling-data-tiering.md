@@ -62,6 +62,8 @@ For example, to tier chunks that are more than three days old in the `example` [
 SELECT add_tiering_policy('example', INTERVAL '3 days');
 ```
 
+By default, a tiering policy runs hourly on your database. To change this interval, call `alter_job`.
+
 ### Remove a tiering policy
 
 To remove an existing tiering policy, call `remove_tiering_policy`:
@@ -109,7 +111,7 @@ Tiering a chunk is an asynchronous process that schedules the chunk to be tiered
 
 1. **Repeat for all chunks you want to tier.**
 
-   Tiering a chunk schedules it for migration to the object storage tier, but the migration won't happen immediately. Chunks are tiered one at a time in order to minimize database resource consumption. You can continue to query a chunk during migration.
+   Tiering a chunk schedules it for migration to the object storage tier, but the migration won't happen immediately. Chunks are tiered one at a time in order to minimize database resource consumption. A chunk is marked as migrated and deleted from the standard storage only after it has been durably stored in the object storage tier. You can continue to query a chunk during migration.
 
 1. **To see which chunks are tiered into the object storage tier, use the `tiered_chunks` informational view:**
 
@@ -180,7 +182,6 @@ To untier a chunk, call the `untier_chunk` stored procedure.
     ```
 
 </Procedure>
-
 
 ## Disable tiering 
 
