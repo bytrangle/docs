@@ -12,9 +12,9 @@ plans: [scale, enterprise]
 
 # About the object storage tier
 
-The Timescale's tiered storage architecture includes a standard high-performance storage tier and a low-cost object storage tier built on Amazon S3. You can use the standard tier for data that requires quick access, and the object tier for rarely used historical data. Chunks from a single hypertable, including compressed chunks, can stretch across these two storage tiers. A compressed chunk uses a different storage representation after tiering.
+Timescale's tiered storage architecture includes a standard high-performance storage tier and a low-cost object storage tier built on Amazon S3. You can use the standard tier for data that requires quick access, and the object tier for rarely used historical data. Chunks from a single hypertable, including compressed chunks, can stretch across these two storage tiers. A compressed chunk uses a different storage representation after tiering.
 
-In the standard storage, chunks are stored in the block format. In the object storage, they are stored in a compressed, columnar format. This format is different from that of the internals of the database, for better interoperability across various platforms. It allows for more efficient columnar scans across longer time periods, and Timescale uses other metadata and query optimizations to reduce the amount of data that needs to be fetched from the object storage tier to satisfy a query. 
+In the high-performance storage, chunks are stored in the block format. In the object storage, they are stored in a compressed, columnar format. For better interoperability across various platforms, this format is different from that of the internals of the database. It allows for more efficient columnar scans across longer time periods, and Timescale Cloud uses other metadata and query optimizations to reduce the amount of data that needs to be fetched from the object storage tier to satisfy a query.
 
 Regardless of where your data is stored, you can still query it with standard SQL. A single SQL query transparently pulls data from the appropriate chunks using the chunk exclusion algorithms. You can `JOIN` against tiered data, build views, and even define continuous aggregates on it. In fact, because the implementation of continuous aggregates also uses hypertables, they can be tiered to low-cost storage as well. 
 
@@ -32,7 +32,7 @@ The object storage tier is more than an archiving solution. It is also:
 
 ## Architecture
 
-The tiered storage backend works by periodically and asynchronously moving older chunks to the object storage tier. 
+The tiered storage backend works by periodically and asynchronously moving older chunks from the high-performance storage to the object storage. 
 There, it's stored in the Apache Parquet format, which is a compressed columnar format well-suited for S3. Within a Parquet file, a set of rows is grouped together to form a row group. Within a row group, values for a single column across multiple rows are stored together.
 
 By default, tiered data is not included when querying from a Timescale service. 
@@ -40,11 +40,11 @@ However, you can access tiered data by [enabling tiered reads][querying-tiered-d
 
 Various SQL optimizations limit what needs to be read from S3:
 
-* Chunk pruning - exclude the chunks that fall outside the query time window.
-* Row group pruning - identify the row groups within the Parquet object that satisfy the query.
-* Column pruning - fetch only columns that are requested by the query.
+* **Chunk pruning** - exclude the chunks that fall outside the query time window.
+* **Row group pruning** - identify the row groups within the Parquet object that satisfy the query.
+* **Column pruning** - fetch only columns that are requested by the query.
 
-The result is transparent queries across standard PostgreSQL storage and S3 storage, so your queries fetch the same data as before.
+The result is transparent queries across high-performance storage and object storage, so your queries fetch the same data as before.
 
 The following query is against a tiered dataset and illustrates the optimizations:
 

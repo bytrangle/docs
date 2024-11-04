@@ -21,10 +21,8 @@ sessions.
 With tiered reads enabled, you can query your data normally even when it's distributed across different storage tiers.
 Your hypertable is spread across the tiers, so queries and `JOIN`s work and fetch the same data as usual.
 
-<Highlight type="warning">
 By default, tiered data is not accessed by queries. Querying tiered data may slow down query performance 
-as the data is not stored locally on Timescale's high-performance storage tier.     
-</Highlight>
+as the data is not stored locally on Timescale's high-performance storage tier. See [Performance considerations](#performance-considerations).
 
 ## Enable querying tiered data for a single query
 

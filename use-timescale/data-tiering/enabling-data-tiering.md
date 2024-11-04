@@ -10,7 +10,7 @@ cloud_ui:
 plans: [scale, enterprise]  
 ---
 
-# Manage tiering
+# Manage automated and manual tiering
 
 You use tiered storage to save on storage costs. Specifically, you can migrate rarely used data from Timescale's standard high-performance storage to the object storage. After you [enable tiered storage](#enable-tiered-storage), you then either [create automated tiering policies](#automate-tiering-with-policies) or [manually tier and untier data](#manually-tier-and-untier-chunks).
 
