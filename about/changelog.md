@@ -12,7 +12,7 @@ All the latest features and updates to Timescale products.
 <Label type="date">November 08 31, 2024</Label>
 
 ### Connect to Timescale with your .NET stack
-We've added info for connecting to Timescale using your .NET workflow.  In the console after service creation, or in the Actions tab, you now have the option to select .NET among the developer library list.  The guide will show you how to use Npgsql to connect to the rest of your software stack.
+We've added instructions for connecting to Timescale using your .NET workflow. In the console after service creation, or in the Actions tab, you can now select .NET from the developer library list. The guide demonstrates how to use Npgsql to integrate Timescale with your existing software stack.
 
 <INSERT .NET IMAGE>
 
