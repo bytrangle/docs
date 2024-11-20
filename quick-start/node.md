@@ -108,7 +108,7 @@ ORM (object relational mapper) called [Sequelize][sequelize-info].
 1.  Compose your connection string variable, using this format:
 
     ```java
-    'postgres://<user>:<pass>@<host>:<port>/<dbname>'
+    'postgres://<user>:<password>@<host>:<port>/<dbname>'
     ```
 
 1.  Open the `index.js` file you created. Require Sequelize in the application,
