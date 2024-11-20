@@ -116,7 +116,7 @@ ORM (object relational mapper) called [Sequelize][sequelize-info].
 
     ```java
     const Sequelize = require('sequelize')
-    const sequelize = new Sequelize('postgres://<user>:<pass>@<host>:<port>/<dbname>',
+    const sequelize = new Sequelize('postgres://<user>:<password>@<host>:<port>/<dbname>',
         {
             dialect: 'postgres',
             protocol: 'postgres',
